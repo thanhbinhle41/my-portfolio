@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './SideBar.module.scss'
+import { NavigationMenu } from '../NavigationMenu/NavigationMenu'
 
 const SideBar = () => {
     return (
@@ -15,9 +16,8 @@ const SideBar = () => {
                     <div className={styles.subTitle}>
                         <span>I build accessible, pixel-perfect digital experiences for the web.</span>
                     </div>
-
-                    <div className={styles.navBar}>
-
+                    <div className={styles.navigationn}>
+                        <NavigationMenu />
                     </div>
                 </div>
                 <div className={styles.socialLinks}>
@@ -34,6 +34,7 @@ const SideBar = () => {
                         <i className="fa-brands fa-telegram" aria-hidden="true"></i>
                     </a>
                 </div>
+
             </div>
         </div>
     )

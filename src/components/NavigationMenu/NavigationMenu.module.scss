@@ -1,0 +1,54 @@
+@import "../../styles/variables.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+
+    .navItem {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+
+        .navLine {
+            width: 2rem;
+            height: 1px;
+            background-color: rgb(71 85 105);
+            ;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+            transition-duration: .15s;
+        }
+
+        span {
+            font-size: 14px;
+            color: rgb(100 116 139);
+            font-weight: 700;
+        }
+
+        &:hover {
+            .navLine {
+                width: 4rem;
+            }
+
+            span {
+                color: $text-color;
+            }
+        }
+    }
+
+    .actived {}
+}
