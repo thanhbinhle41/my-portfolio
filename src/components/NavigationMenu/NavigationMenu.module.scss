@@ -27,7 +27,6 @@
             width: 2rem;
             height: 1px;
             background-color: rgb(71 85 105);
-            ;
             transition-property: all;
             transition-timing-function: cubic-bezier(.4, 0, .2, 1);
             transition-duration: .15s;
@@ -35,7 +34,7 @@
 
         span {
             font-size: 12px;
-            color: rgb(100 116 139);
+            color: $paragraph-color-2;
             font-weight: 700;
             letter-spacing: .15em;
         }

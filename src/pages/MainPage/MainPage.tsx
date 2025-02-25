@@ -8,7 +8,7 @@ const MainPage = () => {
 
     useEffect(() => {
         const updateMousePosition = (e: MouseEvent) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
+            setMousePosition({ x: e.pageX, y: e.pageY });
         };
 
         window.addEventListener("mousemove", updateMousePosition);
@@ -20,20 +20,23 @@ const MainPage = () => {
 
     return (
         <div className={styles.container}>
-            <div
-                className={styles.mouseHighlight}
-                style={{
-                    background: `radial-gradient(400px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
-                }}
-            ></div>
-
-            <div className={styles.wrapper}>
-                <div style={{ width: "40%" }}>
-                    <SideBar />
+            <div className={styles.mouseContainer}>
+                <div className={styles.wrapper}>
+                    <div className={styles.sidebar}>
+                        <SideBar />
+                    </div>
+                    <div className={styles.mainContent}>
+                        <div className={styles.mainWrapper}>
+                            <MainContent />
+                        </div>
+                    </div>
                 </div>
-                <div style={{ width: "60%" }}>
-                    <MainContent />
-                </div>
+                <div
+                    className={styles.mouseHighlight}
+                    style={{
+                        background: `radial-gradient(400px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
+                    }}
+                ></div>
             </div>
         </div>
     )

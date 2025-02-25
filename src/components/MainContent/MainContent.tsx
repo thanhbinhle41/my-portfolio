@@ -18,15 +18,15 @@ const MainContent = () => {
                         <div className={styles.experienceItem} key={index}>
                             <div className={styles.leftWrapper}>
                                 <div className={styles.time}>
-                                    <div className={styles.dateTime}>{item.startDate}</div>
+                                    <div className={styles.dateTime}>{(item.startDate).toUpperCase()}</div>
                                     <div className={styles.line}></div>
-                                    <div className={styles.dateTime}>{item.endDate}</div>
+                                    <div className={styles.dateTime}>{(item.endDate).toUpperCase()}</div>
                                 </div>
-                                <div className={styles.company}>{item.company}</div>
+                                <div className={styles.company}>{(item.company).toUpperCase()}</div>
                             </div>
 
                             <div className={styles.rightWrapper}>
-                                <div className={styles.title}></div>
+                                <div className={styles.title}>{(item.title).toUpperCase()}</div>
                                 <ul className={styles.description}>
                                     {item.description.map((desc, index) => (
                                         <li key={index}>{desc}</li>
