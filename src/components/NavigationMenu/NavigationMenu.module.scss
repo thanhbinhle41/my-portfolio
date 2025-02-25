@@ -34,9 +34,10 @@
         }
 
         span {
-            font-size: 14px;
+            font-size: 12px;
             color: rgb(100 116 139);
             font-weight: 700;
+            letter-spacing: .15em;
         }
 
         &:hover {
@@ -50,5 +51,13 @@
         }
     }
 
-    .actived {}
+    .selected {
+        .navLine {
+            width: 4rem;
+        }
+
+        span {
+            color: $text-color;
+        }
+    }
 }
