@@ -25,7 +25,7 @@ export const EDUCATION_DATA: IEducationData[] = [
         description: [
             "GPA: 3.29/4.0",
             "Very good degree.",
-            "Excellent Study Incentive Scholarship for the years 2020, 2021. 2023.",
+            "Excellent Study Incentive Scholarship for the years 2020, 2021, 2023.",
         ]
     }
 ];

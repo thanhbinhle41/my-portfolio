@@ -7,11 +7,67 @@
     position: relative;
     padding: 6rem 0;
 
+    // REUSEABLE CSS
+    .hoverItem {
+        &:hover {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+            transition-duration: .15s;
+            background-color: rgba(30, 41, 59, .5);
+            border-radius: 0.5rem;
+            box-shadow: 0 0 #0000, 0 0 #0000, inset 0 1px 0 0 rgba(148, 163, 184, .1);
+
+            .titleUpper {
+                color: $highlight-color;
+                transition: .25s;
+            }
+        }
+    }
+
+    .titleUpper {
+        color: $paragraph-color;
+        letter-spacing: .025em;
+        font-weight: 700;
+        font-size: 1rem;
+    }
+
+    .subTitleUpper {
+        color: $paragraph-color-2;
+        letter-spacing: .025em;
+        font-weight: 700;
+        font-size: 0.75rem;
+    }
+
+    .time {
+        display: flex;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .line {
+            width: 0.7rem;
+            height: 1px;
+            background-color: $paragraph-color-2;
+        }
+    }
+    // END REUSEABLE CSS
+
+    .description {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        color: $paragraph-color;
+        line-height: 1.5;
+        font-size: 1rem;
+        padding-left: 2rem;
+    }
+
+    // ABOUT
     .about {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        margin-bottom: 9rem;
+        margin-bottom: 6rem;
 
         .aboutItem {
             color: $paragraph-color;
@@ -19,15 +75,44 @@
             font-size: 16px;
         }
     }
+    // END ABOUT
 
+    // EDUCATION
+    .education {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 6rem;
+
+        .educationItem {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            padding: 1.5rem;
+
+            .majorTime {
+                display: flex;
+                gap: 0.5rem;
+            }
+
+            .eduDescription {
+                padding-left: 1rem;
+            }
+        }
+    }
+    // END EDUCATION
+
+    // EXPERIENCE
     .experience {
         display: flex;
         flex-direction: column;
-        gap: 4rem;
+        gap: 1rem;
+        margin-bottom: 6rem;
 
         .experienceItem {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
+            padding: 1.5rem;
 
             .leftWrapper {
                 display: flex;
@@ -35,32 +120,6 @@
                 gap: 1rem;
                 width: 40%;
 
-                .time {
-                    display: flex;
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-
-                    .dateTime {
-                        color: $paragraph-color-2;
-                        letter-spacing: .025em;
-                        font-weight: 700;
-                        font-size: 0.75rem;
-                    }
-
-                    .line {
-                        width: 0.7rem;
-                        height: 1px;
-                        background-color: $paragraph-color-2;
-                    }
-                }
-
-                .company {
-                    color: $paragraph-color;
-                    letter-spacing: .025em;
-                    font-weight: 700;
-                    font-size: 0.85rem;
-                }
             }
 
             .rightWrapper {
@@ -68,22 +127,8 @@
                 display: flex;
                 flex-direction: column;
                 gap: 0.75rem;
-
-                .title {
-                    color: $paragraph-color;
-                    letter-spacing: .025em;
-                    font-weight: 700;
-                    font-size: 0.85rem;
-                }
-
-                .description {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 0.5rem;
-                    color: $paragraph-color;
-                    line-height: 1.5;
-                }
             }
         }
     }
+    // END EXPERIENCE
 }

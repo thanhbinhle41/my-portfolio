@@ -3,6 +3,7 @@ import styles from './NavigationMenu.module.scss'
 
 const NAV_LIST: { name: string, isActived: boolean }[] = [
     { name: 'ABOUT', isActived: false },
+    { name: 'EDUCATION', isActived: false },
     { name: 'EXPERIENCE', isActived: false },
     { name: 'PROJECTS', isActived: false },
 ];
@@ -10,18 +11,24 @@ const NAV_LIST: { name: string, isActived: boolean }[] = [
 export const NavigationMenu = () => {
     const [selected, setSelected] = React.useState(0);
 
+    const onClick = (e: React.MouseEvent<HTMLDivElement>, index: number, name: string) => {
+        setSelected(index);
+        const element = document.getElementById(name.toLowerCase());
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    }
 
     return (
         <div className={styles.container}>
             {NAV_LIST.map((nav, index) => (
-                <a 
-                    key={index} className={`${styles.navItem} ${selected === index ? styles.selected : ''}`} 
-                    href={`#${(nav.name).toLowerCase()}`}
-                    onClick={() => setSelected(index)}
+                <div
+                    key={index} className={`${styles.navItem} ${selected === index ? styles.selected : ''}`}
+                    onClick={(e) => onClick(e, index, nav.name)}
                 >
                     <div className={styles.navLine}></div>
                     <span>{nav.name}</span>
-                </a>
+                </div>
             ))}
         </div>
     )

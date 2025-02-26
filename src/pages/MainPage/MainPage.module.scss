@@ -21,7 +21,7 @@
             pointer-events: none;
             transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
             transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-            
+
         }
     }
 
@@ -29,26 +29,31 @@
         display: flex;
         width: 100%;
         flex-direction: row;
-        gap: 1.5rem;
         max-width: 1280px;
         margin: 0 auto;
     }
 
-    
+
 
     .sidebar {
         position: fixed;
         height: 100%;
+        z-index: 999;
+        width: 20%;
+        min-width: 200px;
+        top: 0;
+        bottom: 0;
     }
 
     .mainContent {
-        width: 100%;
+        flex: 1;
         display: flex;
         justify-content: flex-end;
         position: relative;
+        padding-left: 2rem;
 
         .mainWrapper {
-            width: 60%;
+            width: 70%;
             display: flex;
             justify-content: flex-end;
         }
