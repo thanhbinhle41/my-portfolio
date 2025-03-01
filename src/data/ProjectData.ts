@@ -7,6 +7,8 @@ interface IProjectData {
     position: string;
     technologies: string[];
     description: string[];
+    images?: string[];
+    video?: string;
     link?: string;
 }
 
@@ -23,6 +25,7 @@ export const PROJECT_DATA: IProjectData[] = [
             "Developed a CMS website with features including featured articles, user notification creation, and automated notification delivery on the 1SK website and application.",
             "Resolved UI issues for the e-commerce website of the 1SK project, ensuring a seamless and user-friendly experience",
         ],
+        images: [],
         link: "https://1sk.vn/",
     },
     {
@@ -32,12 +35,13 @@ export const PROJECT_DATA: IProjectData[] = [
         startDate: "May 2022",
         endDate: "July 2022",
         position: "Full-stack Developer",
-        technologies: ["Python Flask", "SQLAlchemy", "jQuery"],
+        technologies: ["Flask", "SQLAlchemy", "jQuery"],
         description: [
             "Developed the website UI using Bootstrap and jQuery",
             "Designed system architecture and databases",
-            "Built RESTful APIs using Python Flask.",
+            "Built RESTful APIs using Flask.",
         ],
+        images: [],
     },
     {
         name: "MineOpt - Mining Optimization",
@@ -51,6 +55,7 @@ export const PROJECT_DATA: IProjectData[] = [
             "Developed the website UI and integrated APIs to implement specific functionalities using Bootstrap and jQuery.",
             "Migrated the front-end project to a new architecture using ReactJS and TypeScript, enhancing performance and maintainability",
         ],
+        images: [],
     },
     {
         name: "Maxflow App",
@@ -66,6 +71,7 @@ export const PROJECT_DATA: IProjectData[] = [
             "Utilized Webpack to bundle components and deploy them to the server for efficient asset management and performance optimization.",
             "Implemented Webpack and Micro Frontend technology to facilitate communication between users, components, and Maxflow.app, seamlessly integrating them into user workflows.",
         ],
+        images: [],
         link: "https://maxflow.app/",
     },
     {
@@ -75,7 +81,7 @@ export const PROJECT_DATA: IProjectData[] = [
         startDate: "Apr 2023",
         endDate: "Nov 2024",
         position: "Full-stack Developer",
-        technologies: ["ReactJS", "TypeScript", "Python Flask", "Python Fast API"],
+        technologies: ["ReactJS", "TypeScript", "Flask", "Fast API"],
         description: [
             "Developed project modules as independent functions and components, then integrated them into the main application for seamless functionality.",
             "Analyzed requirements and processed data streams to ensure efficient data handling and system performance.",
@@ -83,6 +89,7 @@ export const PROJECT_DATA: IProjectData[] = [
             "Developed RESTful APIs using Python FastAPI for efficient and scalable backend services.",
             "Developed the website UI using ReactJS and TypeScript, ensuring a responsive and maintainable interface.",
         ],
+        images: [],
     },
     {
         name: "Book ecosystem - Final year project",
@@ -98,6 +105,7 @@ export const PROJECT_DATA: IProjectData[] = [
             "Developed the database schema and implemented data storage using PostgreSQL.",
             "Integrated a Recommendation System to provide personalized book suggestions for users.",
         ],
+        images: [],
     },
     {
         name: "MaxGPT - Enterprise Workflow Automation with Gen AI",
@@ -112,7 +120,9 @@ export const PROJECT_DATA: IProjectData[] = [
             "Optimize system performance and scalability to support continuous workflow automation.",
             "Build essential and widely-used AI tools tailored to enterprise demands.",
         ],
+        video: "maxgpt.mp4",
         link: "https://maxflow.ai/",
+
     }
 
 ]  

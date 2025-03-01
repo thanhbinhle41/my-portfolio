@@ -5,6 +5,7 @@ interface IExperienceData {
     startDate: string;
     endDate: string;
     description: string[];
+    link?: string;
 }
 
 
@@ -19,7 +20,8 @@ export const EXPERIENCE_DATA: IExperienceData[] = [
             "Learning and training with the framework VueJS.",
             "Testing and developing a demo website with ongoing Search Engine Optimization (SEO) enhancements.",
             "Implemented new features and fixed bugs to enhance the user experience."
-        ]
+        ],
+        link: "https://www.elcom.com.vn/",
     },
     {
         title: "Mid-level web developer",
@@ -34,5 +36,6 @@ export const EXPERIENCE_DATA: IExperienceData[] = [
             "Utilize Webpack for bundling components and implement Micro Frontend architecture to facilitate seamless communication among users, components, and applications within the workflow.",
             "Contribute to company culture by participating in planning and coordinating internal activities and events.",
         ],
+        link: "https://maxflowtech.com/",
     }
 ];
