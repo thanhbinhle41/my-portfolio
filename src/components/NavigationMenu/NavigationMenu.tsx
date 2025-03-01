@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './NavigationMenu.module.scss'
+import useActiveSection from '../../app/useActiveSection';
 
 const NAV_LIST: { name: string, isActived: boolean }[] = [
     { name: 'ABOUT', isActived: false },
@@ -9,22 +10,28 @@ const NAV_LIST: { name: string, isActived: boolean }[] = [
 ];
 
 export const NavigationMenu = () => {
-    const [selected, setSelected] = React.useState(0);
+    const activeSection = useActiveSection(NAV_LIST.map((nav) => nav.name.toLowerCase()));
 
-    const onClick = (e: React.MouseEvent<HTMLDivElement>, index: number, name: string) => {
-        setSelected(index);
+    const [selected, setSelected] = React.useState("");
+
+    const onClick = (e: React.MouseEvent<HTMLDivElement>, name: string) => {
+        setSelected(name);
         const element = document.getElementById(name.toLowerCase());
         if (element) {
             element.scrollIntoView({ behavior: "smooth" });
         }
     }
 
+    useEffect(() => {
+        setSelected(activeSection.toUpperCase());
+    }, [activeSection]);
+
     return (
         <div className={styles.container}>
             {NAV_LIST.map((nav, index) => (
                 <div
-                    key={index} className={`${styles.navItem} ${selected === index ? styles.selected : ''}`}
-                    onClick={(e) => onClick(e, index, nav.name)}
+                    key={index} className={`${styles.navItem} ${selected === nav.name ? styles.selected : ''}`}
+                    onClick={(e) => onClick(e, nav.name)}
                 >
                     <div className={styles.navLine}></div>
                     <span>{nav.name}</span>
