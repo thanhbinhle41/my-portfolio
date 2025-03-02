@@ -224,6 +224,37 @@
                             /* Keeps the video aspect ratio and fills the container */
                         }
                     }
+
+                    .imgWrapper {
+                        border-radius: 0.5rem;
+                        width: 100%;
+                        object-fit: cover;
+
+                        :global {
+                            .slide div {
+                                width: 100%;
+
+                                img {
+                                    aspect-ratio: 16 / 9;
+                                }
+                            }
+                            .carousel {
+                                .control-arrow {
+                                    width: 20px;
+                                    height: 20px;
+                                    background-color: transparent;
+                                }
+                                .control-prev {
+                                    left: 0;
+                                    top: calc(50% - 10px) !important;
+                                }
+                                .control-next {
+                                    right: 0;
+                                    top: calc(50% - 10px) !important;
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
@@ -275,7 +306,6 @@
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
-        margin-bottom: 6rem;
 
         .activitiesDescription {
             color: $title-color;

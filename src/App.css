@@ -36,12 +36,12 @@
 
 .carousel .control-prev {
   left: 15px; /* Adjust left position */
-  top: 50% !important; /* Center vertically */
+  top: calc(50% - 25px) !important; /* Center vertically */
 }
 
 .carousel .control-next {
   right: 15px; /* Adjust right position */
-  top: 50% !important; /* Center vertically */
+  top: calc(50% - 25px) !important; /* Center vertically */
 }
 
 .carousel .control-arrow:before {

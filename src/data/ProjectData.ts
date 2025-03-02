@@ -1,3 +1,13 @@
+import image1 from './images/1.jpg';
+import image2 from './images/2.jpg';
+import image3 from './images/3.jpg';
+import image4 from './images/4.jpg';
+import image5 from './images/5.jpg';
+import image6 from './images/6.jpg';
+import image7 from './images/7.jpg';
+import image8 from './images/8.jpg';
+import image9 from './images/9.jpg';
+import image10 from './images/10.jpg';
 interface IProjectData {
     name: string;
     projDescription: string;
@@ -75,6 +85,22 @@ export const PROJECT_DATA: IProjectData[] = [
         link: "https://maxflow.app/",
     },
     {
+        name: "Book ecosystem - Final year project",
+        projDescription: "Developed a book ecosystem application featuring an e-book and audiobook store with direct and online purchasing, a library for reading and listening, and an administrative book management system. Integrated a Recommendation System to provide personalized book suggestions for users.",
+        company: "PTIT HANOI - POSTS AND TELECOMMUNICATIONS INSTITUTE OF TECHNOLOGY HANOI",
+        startDate: "Aug 2023",
+        endDate: "Dec 2023",
+        position: "Full-stack Mobile Developer",
+        technologies: ["React Native", "NestJS", "Postgresql", "Python"],
+        description: [
+            "Developed the mobile application UI using React Native, ensuring a seamless and user-friendly experience.",
+            "Designed and developed RESTful APIs using NestJS for efficient and scalable backend services.",
+            "Developed the database schema and implemented data storage using PostgreSQL.",
+            "Integrated a Recommendation System to provide personalized book suggestions for users.",
+        ],
+        images: [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10],
+    },
+    {
         name: "ACE 3 - Analytics Crowdsourcing Environment Version 3",
         projDescription: "An application for data visualization, analysis, and prediction or identification of exceptions based on data analysis through algorithms.",
         company: "MAXFLOW TECHNOLOGY INC",
@@ -89,23 +115,7 @@ export const PROJECT_DATA: IProjectData[] = [
             "Developed RESTful APIs using Python FastAPI for efficient and scalable backend services.",
             "Developed the website UI using ReactJS and TypeScript, ensuring a responsive and maintainable interface.",
         ],
-        images: [],
-    },
-    {
-        name: "Book ecosystem - Final year project",
-        projDescription: "Developed a book ecosystem application featuring an e-book and audiobook store with direct and online purchasing, a library for reading and listening, and an administrative book management system. Integrated a Recommendation System to provide personalized book suggestions for users.",
-        company: "PTIT HANOI - POSTS AND TELECOMMUNICATIONS INSTITUTE OF TECHNOLOGY HANOI",
-        startDate: "Aug 2023",
-        endDate: "Dec 2023",
-        position: "Full-stack Mobile Developer",
-        technologies: ["React Native", "NestJS", "Postgresql", "Python"],
-        description: [
-            "Developed the mobile application UI using React Native, ensuring a seamless and user-friendly experience.",
-            "Designed and developed RESTful APIs using NestJS for efficient and scalable backend services.",
-            "Developed the database schema and implemented data storage using PostgreSQL.",
-            "Integrated a Recommendation System to provide personalized book suggestions for users.",
-        ],
-        images: [],
+        images: [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10],
     },
     {
         name: "MaxGPT - Enterprise Workflow Automation with Gen AI",

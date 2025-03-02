@@ -14,7 +14,7 @@ const SideBar = () => {
                         <span>Web Developer</span>
                     </div>
                     <div className={styles.subTitle}>
-                        <span>I build accessible, pixel-perfect digital experiences for the web.</span>
+                        <span>21/01/2001</span>
                     </div>
                     <div className={styles.navigationn}>
                         <NavigationMenu />

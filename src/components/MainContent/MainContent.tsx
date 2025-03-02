@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './MainContent.module.scss'
 import { ABOUT_DATA } from '../../data/AboutData'
 import { EXPERIENCE_DATA } from '../../data/ExperienceData'
@@ -16,6 +16,7 @@ import image7 from '../../data/images/7.jpg';
 import image8 from '../../data/images/8.jpg';
 import image9 from '../../data/images/9.jpg';
 import image10 from '../../data/images/10.jpg';
+import ZoomImages from '../ZoomImages/ZoomImages'
 
 
 const REVERSE_PROJECT_DATA = [...PROJECT_DATA].reverse();
@@ -24,6 +25,10 @@ const MainContent = () => {
 
     const [showMoreProjs, setShowMoreProjs] = React.useState(true);
     const [projects, setProjects] = React.useState(REVERSE_PROJECT_DATA.slice(0, 3));
+
+    const [listImagesZoom, setListImagesZoom] = useState<string[]>([]);
+    const [currentIndexZoom, setCurrentIndexZoom] = useState<number>(0);
+    const [isZoomed, setIsZoomed] = useState(false);
 
     const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10];
 
@@ -154,9 +159,25 @@ const MainContent = () => {
                                             </video>
                                         </div>
                                     }
-                                    {item.images && item.images.map((img, i) => (
-                                        <img key={i} src={img} alt="project" />
-                                    ))}
+                                    {item.images &&
+                                        <div className={styles.imgWrapper}>
+                                            <Carousel dynamicHeight={true} swipeable={true} emulateTouch={true} showThumbs={false} >
+                                                {images.map((img, index) => (
+                                                    <div key={index}
+                                                        style={{ cursor: "zoom-in" }}
+                                                        onClick={() => {
+                                                            console.log('click', img, index);
+                                                            setListImagesZoom(item.images ? item.images : []);
+                                                            setCurrentIndexZoom(index);
+                                                            setIsZoomed(true);
+                                                        }}
+                                                    >
+                                                        <img src={img} alt="projects_img" style={{ cursor: "pointer", maxHeight: "400px", objectFit: "cover" }} />
+                                                    </div>
+                                                ))}
+                                            </Carousel>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                             <div className={styles.rightWrapper}>
@@ -202,7 +223,7 @@ const MainContent = () => {
                     <span>Also I am an outgoing individual who enjoys sports and actively organizes events in both academic and corporate settings. These experiences have strengthened my teamwork, leadership, and organizational skills.</span>
                 </div>
                 <div className={styles.imgWrapper}>
-                    <Carousel dynamicHeight={true}  swipeable={true} emulateTouch={true} selectedItem={4}>
+                    <Carousel dynamicHeight={true} swipeable={true} emulateTouch={true} selectedItem={4}>
                         {images.map((img, index) => (
                             <div key={index}>
                                 <img className={styles.noSelect} src={img} alt="activity" />
@@ -211,6 +232,18 @@ const MainContent = () => {
                     </Carousel>
                 </div>
             </div>
+
+            <ZoomImages
+                images={listImagesZoom}
+                defaultIndex={currentIndexZoom}
+                onClose={() => {
+                    setCurrentIndexZoom(0);
+                    setListImagesZoom([]);
+                    setIsZoomed(false);
+                    console.log('siu');
+                }}
+                isZoomed={isZoomed}
+            />
         </div>
     )
 }
