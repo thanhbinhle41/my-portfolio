@@ -2,11 +2,12 @@ import React, { useEffect } from 'react'
 import styles from './NavigationMenu.module.scss'
 import useActiveSection from '../../app/useActiveSection';
 
-const NAV_LIST: { name: string, isActived: boolean }[] = [
-    { name: 'ABOUT', isActived: false },
-    { name: 'EDUCATION', isActived: false },
-    { name: 'EXPERIENCE', isActived: false },
-    { name: 'PROJECTS', isActived: false },
+const NAV_LIST: { name: string, }[] = [
+    { name: 'ABOUT' },
+    { name: 'EDUCATION' },
+    { name: 'EXPERIENCE' },
+    { name: 'PROJECTS' },
+    { name: 'ACTIVITIES' },
 ];
 
 export const NavigationMenu = () => {

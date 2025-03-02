@@ -93,6 +93,13 @@
         padding-left: 0.5rem;
     }
 
+    .noSelect {
+        user-select: none;
+        /* Prevent text selection */
+        -webkit-user-drag: none;
+        /* Prevent dragging in Safari */
+    }
+
 
     // END REUSEABLE CSS
 
@@ -206,7 +213,9 @@
                     max-width: 85%;
 
                     .videoWrapper {
-                        aspect-ratio: 16 / 9; /* Keeps the aspect ratio */
+                        aspect-ratio: 16 / 9;
+
+                        /* Keeps the aspect ratio */
                         video {
                             border-radius: 0.5rem;
                             width: 100%;
@@ -257,4 +266,30 @@
             display: flex;
         }
     }
+
+    // END PROJECTS
+
+    // ACTIVITIES
+    .activities {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 6rem;
+
+        .activitiesDescription {
+            color: $title-color;
+            letter-spacing: .025em;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+
+        .imgWrapper {
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+
+    // END ACTIVITIES
 }

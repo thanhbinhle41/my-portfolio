@@ -15,6 +15,8 @@ export const EDUCATION_DATA: IEducationData[] = [
         description: [
             "GPA: 8.5/10",
             "Very good diploma",
+            "President of the school's Basketball Club",
+            "Class monitor for 3 years",
         ]
     },
     {
@@ -26,6 +28,7 @@ export const EDUCATION_DATA: IEducationData[] = [
             "GPA: 3.29/4.0",
             "Very good degree.",
             "Excellent Study Incentive Scholarship for the years 2020, 2021, 2023.",
+            "Leader of Web team at Programming PTIT Ha Noi Club in 2023.",
         ]
     }
 ];

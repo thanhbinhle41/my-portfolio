@@ -4,6 +4,19 @@ import { ABOUT_DATA } from '../../data/AboutData'
 import { EXPERIENCE_DATA } from '../../data/ExperienceData'
 import { EDUCATION_DATA } from '../../data/EducationData'
 import { PROJECT_DATA } from '../../data/ProjectData'
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import image1 from '../../data/images/1.jpg';
+import image2 from '../../data/images/2.jpg';
+import image3 from '../../data/images/3.jpg';
+import image4 from '../../data/images/4.jpg';
+import image5 from '../../data/images/5.jpg';
+import image6 from '../../data/images/6.jpg';
+import image7 from '../../data/images/7.jpg';
+import image8 from '../../data/images/8.jpg';
+import image9 from '../../data/images/9.jpg';
+import image10 from '../../data/images/10.jpg';
+
 
 const REVERSE_PROJECT_DATA = [...PROJECT_DATA].reverse();
 
@@ -11,6 +24,8 @@ const MainContent = () => {
 
     const [showMoreProjs, setShowMoreProjs] = React.useState(true);
     const [projects, setProjects] = React.useState(REVERSE_PROJECT_DATA.slice(0, 3));
+
+    const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10];
 
     const onClickShowMore = () => {
         const newLength = projects.length + 3;
@@ -182,9 +197,22 @@ const MainContent = () => {
                 </div>
             </div>
 
-            <div className={styles.projects}></div>
+            <div className={styles.activities} id="activities">
+                <div className={styles.activitiesDescription}>
+                    <span>Also I am an outgoing individual who enjoys sports and actively organizes events in both academic and corporate settings. These experiences have strengthened my teamwork, leadership, and organizational skills.</span>
+                </div>
+                <div className={styles.imgWrapper}>
+                    <Carousel dynamicHeight={true}  swipeable={true} emulateTouch={true} selectedItem={4}>
+                        {images.map((img, index) => (
+                            <div key={index}>
+                                <img className={styles.noSelect} src={img} alt="activity" />
+                            </div>
+                        ))}
+                    </Carousel>
+                </div>
+            </div>
         </div>
     )
 }
 
-export default MainContent
+export default MainContent;

@@ -3,3 +3,48 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.carousel {
+  max-height: 400px; /* Adjust this to your preference */
+}
+
+.carousel .slide {
+  height: 400px; /* Same as max-height above */
+}
+
+.carousel .slide div {
+  height: 500px;
+}
+
+.carousel .slide img {
+  max-height: 100%;
+  object-fit: fill;
+}
+
+
+.carousel .thumbs img{
+  height: 60px;
+}
+
+
+.carousel .control-arrow {
+  background: rgba(0, 0, 0, 0.5); /* Add background color */
+  border-radius: 50%; /* Make them round */
+  width: 50px;
+  height: 50px;
+}
+
+.carousel .control-prev {
+  left: 15px; /* Adjust left position */
+  top: 50% !important; /* Center vertically */
+}
+
+.carousel .control-next {
+  right: 15px; /* Adjust right position */
+  top: 50% !important; /* Center vertically */
+}
+
+.carousel .control-arrow:before {
+  color: white; /* Change arrow color */
+  font-size: 24px; /* Increase arrow size */
+}
