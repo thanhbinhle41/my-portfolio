@@ -63,7 +63,18 @@ const MainContent = () => {
                 {EDUCATION_DATA.map((item, index) => {
                     return (
                         <div className={`${styles.educationItem} ${styles.hoverItem}`} key={index}>
-                            <div className={styles.titleUpper}>{(item.name.toUpperCase())}</div>
+                            <div
+                                className={styles.titleUpper}
+                                style={{ cursor: item.link ? 'pointer' : 'default' }}
+                                onClick={() => item.link && goToLink(item.link)}
+                            >
+                                {(item.name.toUpperCase())}
+                                {item.link &&
+                                    <div className={styles.linkIcon}>
+                                        <i className="fa-solid fa-up-right-from-square"></i>
+                                    </div>
+                                }
+                            </div>
                             <div className={styles.majorTime}>
                                 <div className={`${styles.major} ${styles.subTitleUpper}`}>{(item.fieldOfStudy.toUpperCase())}</div>
                                 <div className={styles.time}>

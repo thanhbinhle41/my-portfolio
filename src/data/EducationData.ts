@@ -4,6 +4,7 @@ interface IEducationData {
     startYear: string;
     endYear: string;
     description: string[];
+    link?: string;
 }
 
 export const EDUCATION_DATA: IEducationData[] = [
@@ -17,7 +18,8 @@ export const EDUCATION_DATA: IEducationData[] = [
             "Very good diploma",
             "President of the school's Basketball Club",
             "Class monitor for 3 years",
-        ]
+        ],
+        link: "https://thptchuyenlamson.edu.vn/",
     },
     {
         name: "PTIT HANOI - Posts and Telecommunications Institute of Technology",
@@ -28,7 +30,8 @@ export const EDUCATION_DATA: IEducationData[] = [
             "GPA: 3.29/4.0",
             "Very good degree.",
             "Excellent Study Incentive Scholarship for the years 2020, 2021, 2023.",
-            "Leader of Web team at Programming PTIT Ha Noi Club in 2023.",
-        ]
+            "Leader of Web team at Programming PTIT Club Ha Noi in 2023.",
+        ],
+        link: "https://english.ptit.edu.vn/",
     }
 ];
