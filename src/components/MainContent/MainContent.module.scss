@@ -238,20 +238,28 @@
                                     aspect-ratio: 16 / 9;
                                 }
                             }
+
                             .carousel {
                                 .control-arrow {
                                     width: 20px;
                                     height: 20px;
                                     background-color: transparent;
                                 }
+
                                 .control-prev {
                                     left: 0;
                                     top: calc(50% - 10px) !important;
                                 }
+
                                 .control-next {
                                     right: 0;
                                     top: calc(50% - 10px) !important;
                                 }
+
+                                .control-next.control-arrow:before {
+                                    border-left: 8px solid gray;
+                                }
+
                             }
                         }
                     }

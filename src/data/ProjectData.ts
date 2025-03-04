@@ -1,13 +1,15 @@
-import image1 from './images/1.jpg';
-import image2 from './images/2.jpg';
-import image3 from './images/3.jpg';
-import image4 from './images/4.jpg';
-import image5 from './images/5.jpg';
-import image6 from './images/6.jpg';
-import image7 from './images/7.jpg';
-import image8 from './images/8.jpg';
-import image9 from './images/9.jpg';
-import image10 from './images/10.jpg';
+import mineOpt1 from './images/MineOpt/mineOpt1.png';
+import mineOpt2 from './images/MineOpt/mineOpt2.png';
+import mineOpt4 from './images/MineOpt/mineOpt4.png';
+import Ace3_1 from './images/Ace3/Ace3_1.png';
+import Ace3_2 from './images/Ace3/Ace3_2.png';
+import Ace3_3 from './images/Ace3/Ace3_3.png';
+import Ace3_4 from './images/Ace3/Ace3_4.png';
+import Ace3_5 from './images/Ace3/Ace3_5.png';
+import MaxflowApp_1 from './images/MaxflowApp/MaxflowApp_1.png';
+import MaxflowApp_2 from './images/MaxflowApp/MaxflowApp_2.png';
+import MaxflowApp_3 from './images/MaxflowApp/MaxflowApp_3.png';
+
 interface IProjectData {
     name: string;
     projDescription: string;
@@ -65,7 +67,7 @@ export const PROJECT_DATA: IProjectData[] = [
             "Developed the website UI and integrated APIs to implement specific functionalities using Bootstrap and jQuery.",
             "Migrated the front-end project to a new architecture using ReactJS and TypeScript, enhancing performance and maintainability",
         ],
-        images: [],
+        images: [mineOpt1, mineOpt2, mineOpt4],
     },
     {
         name: "Maxflow App",
@@ -81,7 +83,7 @@ export const PROJECT_DATA: IProjectData[] = [
             "Utilized Webpack to bundle components and deploy them to the server for efficient asset management and performance optimization.",
             "Implemented Webpack and Micro Frontend technology to facilitate communication between users, components, and Maxflow.app, seamlessly integrating them into user workflows.",
         ],
-        images: [],
+        images: [MaxflowApp_1, MaxflowApp_2, MaxflowApp_3],
         link: "https://maxflow.app/",
     },
     {
@@ -98,7 +100,6 @@ export const PROJECT_DATA: IProjectData[] = [
             "Developed the database schema and implemented data storage using PostgreSQL.",
             "Integrated a Recommendation System to provide personalized book suggestions for users.",
         ],
-        images: [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10],
     },
     {
         name: "ACE 3 - Analytics Crowdsourcing Environment Version 3",
@@ -115,7 +116,7 @@ export const PROJECT_DATA: IProjectData[] = [
             "Developed RESTful APIs using Python FastAPI for efficient and scalable backend services.",
             "Developed the website UI using ReactJS and TypeScript, ensuring a responsive and maintainable interface.",
         ],
-        images: [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10],
+        images: [Ace3_1, Ace3_2, Ace3_3, Ace3_4, Ace3_5],
     },
     {
         name: "MaxGPT - Enterprise Workflow Automation with Gen AI",
@@ -132,7 +133,6 @@ export const PROJECT_DATA: IProjectData[] = [
         ],
         video: "maxgpt.mp4",
         link: "https://maxflow.ai/",
-
     }
 
 ]  

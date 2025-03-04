@@ -170,14 +170,13 @@ const MainContent = () => {
                                             </video>
                                         </div>
                                     }
-                                    {item.images &&
+                                    {item.images && item.images.length > 0 &&
                                         <div className={styles.imgWrapper}>
                                             <Carousel dynamicHeight={true} swipeable={true} emulateTouch={true} showThumbs={false} >
-                                                {images.map((img, index) => (
+                                                {item.images.map((img, index) => (
                                                     <div key={index}
                                                         style={{ cursor: "zoom-in" }}
                                                         onClick={() => {
-                                                            console.log('click', img, index);
                                                             setListImagesZoom(item.images ? item.images : []);
                                                             setCurrentIndexZoom(index);
                                                             setIsZoomed(true);
