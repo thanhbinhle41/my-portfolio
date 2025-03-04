@@ -100,6 +100,7 @@ export const PROJECT_DATA: IProjectData[] = [
             "Developed the database schema and implemented data storage using PostgreSQL.",
             "Integrated a Recommendation System to provide personalized book suggestions for users.",
         ],
+        video: "book.mp4",
     },
     {
         name: "ACE 3 - Analytics Crowdsourcing Environment Version 3",

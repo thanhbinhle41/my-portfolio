@@ -221,7 +221,14 @@
                             width: 100%;
                             height: 100%;
                             object-fit: cover;
+
                             /* Keeps the video aspect ratio and fills the container */
+                            &:fullscreen {
+                                width: auto;
+                                height: 100vh;
+                                max-width: 100%;
+                                object-fit: contain;
+                            }
                         }
                     }
 
