@@ -1,42 +1,55 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import styles from './MainPage.module.scss'
 import SideBar from '../../components/SideBar/SideBar';
 import MainContent from '../../components/MainContent/MainContent';
 
 const MainPage = () => {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const wrapperRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        const scrollElement = scrollContainerRef.current;
+
         const updateMousePosition = (e: MouseEvent) => {
-            setMousePosition({ x: e.pageX, y: e.pageY });
+            const wrapperRefElement = wrapperRef.current;
+            if (scrollElement && wrapperRefElement) {
+                const x = e.clientX;
+                const y = e.clientY + scrollElement.scrollTop;
+                wrapperRefElement.style.setProperty("--gradientX", `${x}px`);
+                wrapperRefElement.style.setProperty("--gradientY", `${y}px`);
+            }
         };
+
+
+        if (scrollElement) {
+            scrollElement.addEventListener("mousemove", updateMousePosition);
+        }
 
         window.addEventListener("mousemove", updateMousePosition);
         return () => {
-            window.removeEventListener("mousemove", updateMousePosition);
+            if (scrollElement) {
+                scrollElement.removeEventListener("mousemove", updateMousePosition);
+            }
         };
     }, []);
 
 
     return (
         <div className={styles.container}>
-            <div className={styles.mouseContainer}>
-                <div className={styles.wrapper}>
-                    <div className={styles.sidebar}>
-                        <SideBar />
-                    </div>
-                    <div className={styles.mainContent}>
-                        <div className={styles.mainWrapper}>
-                            <MainContent />
+            <div className={styles.scrollContainer} ref={scrollContainerRef}>
+                <div className={styles.wrapper} ref={wrapperRef}>
+                    <div className={styles.contentWrapper}>
+                        <div className={styles.content}>
+                            <div className={styles.sideBar}>
+                                <SideBar />
+                            </div>
+                            <div className={styles.mainContent}>
+                                <MainContent />
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div
-                    className={styles.mouseHighlight}
-                    style={{
-                        background: `radial-gradient(400px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
-                    }}
-                ></div>
             </div>
         </div>
     )

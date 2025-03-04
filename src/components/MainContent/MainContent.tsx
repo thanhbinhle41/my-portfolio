@@ -164,7 +164,7 @@ const MainContent = () => {
                                 <div className={styles.media}>
                                     {item.video &&
                                         <div className={styles.videoWrapper}>
-                                            <video controls>
+                                            <video controls preload="none">
                                                 <source src={`/videos/${item.video}`} type="video/mp4" />
                                                 Your browser does not support the video tag.
                                             </video>
@@ -183,7 +183,10 @@ const MainContent = () => {
                                                             setIsZoomed(true);
                                                         }}
                                                     >
-                                                        <img src={img} alt="projects_img" style={{ cursor: "pointer", maxHeight: "400px", objectFit: "cover" }} />
+                                                        <img 
+                                                            src={img} alt="projects_img" 
+                                                            loading='lazy'
+                                                            style={{ cursor: "pointer", maxHeight: "400px", objectFit: "cover" }} />
                                                     </div>
                                                 ))}
                                             </Carousel>
@@ -237,7 +240,7 @@ const MainContent = () => {
                     <Carousel dynamicHeight={true} swipeable={true} emulateTouch={true} selectedItem={4}>
                         {images.map((img, index) => (
                             <div key={index}>
-                                <img className={styles.noSelect} src={img} alt="activity" />
+                                <img className={styles.noSelect} src={img} alt="activity" loading='lazy' />
                             </div>
                         ))}
                     </Carousel>
