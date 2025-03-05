@@ -31,7 +31,7 @@ const MainContent = () => {
     const [aboutData, setAboutData] = useState(ABOUT_DATA_EN);
     const [educationData, setEducationData] = useState(EDUCATION_DATA_EN);
     const [experienceData, setExperienceData] = useState(EXPERIENCE_DATA_EN);
-    
+
 
     const [listImagesZoom, setListImagesZoom] = useState<string[]>([]);
     const [currentIndexZoom, setCurrentIndexZoom] = useState<number>(0);
@@ -81,7 +81,7 @@ const MainContent = () => {
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
-                    <div className={styles.titleUpper}>{language === "en" ? "ABOUT" : "ОБО МНЕ" }</div>
+                    <div className={styles.titleUpper}>{language === "en" ? "ABOUT" : "ОБО МНЕ"}</div>
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
@@ -96,7 +96,7 @@ const MainContent = () => {
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
-                    <div className={styles.titleUpper}>{language === "en" ? "EDUCATION" : "ОБРАЗОВАНИЕ" }</div>
+                    <div className={styles.titleUpper}>{language === "en" ? "EDUCATION" : "ОБРАЗОВАНИЕ"}</div>
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
@@ -139,7 +139,7 @@ const MainContent = () => {
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
-                    <div className={styles.titleUpper}>{language === "en" ? "EXPERIENCE" : "ОПЫТ" }</div>
+                    <div className={styles.titleUpper}>{language === "en" ? "EXPERIENCE" : "ОПЫТ"}</div>
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
@@ -187,7 +187,7 @@ const MainContent = () => {
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
-                    <div className={styles.titleUpper}>{language === "en" ? "PROJECTS" : "ПРОЕКТЫ" }</div>
+                    <div className={styles.titleUpper}>{language === "en" ? "PROJECTS" : "ПРОЕКТЫ"}</div>
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
@@ -295,13 +295,17 @@ const MainContent = () => {
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
-                    <div className={styles.titleUpper}>{language === "en" ? "ACTIVITES" : "ДЕЯТЕЛЬНОСТЬ" }</div>
+                    <div className={styles.titleUpper}>{language === "en" ? "ACTIVITES" : "ДЕЯТЕЛЬНОСТЬ"}</div>
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
                 </div>
                 <div className={styles.activitiesDescription}>
-                    <span>Also I am an outgoing individual who enjoys sports and actively organizes events in both academic and corporate settings. These experiences have strengthened my teamwork, leadership, and organizational skills.</span>
+                    {language === "en" ?
+                        <span>Also I am an outgoing individual who enjoys sports and actively organizes events in both academic and corporate settings. These experiences have strengthened my teamwork, leadership, and organizational skills.</span>
+                        :
+                        <span>Также я общительный человек, который любит спорт и активно организует мероприятия как в академической, так и в корпоративной среде. Этот опыт укрепил мои навыки командной работы, лидерства и организационные навыки.</span>
+                    }
                 </div>
                 <div className={styles.imgWrapper}>
                     <Carousel dynamicHeight={true} swipeable={true} emulateTouch={true} selectedItem={4}>
