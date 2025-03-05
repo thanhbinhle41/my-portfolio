@@ -1,8 +1,15 @@
-import React from 'react'
 import styles from './SideBar.module.scss'
 import { NavigationMenu } from '../NavigationMenu/NavigationMenu'
+import { EnglishIcon, RussiaIcon } from './LanguageIcon'
+import { useAppContext } from '../../context/AppContext'
 
 const SideBar = () => {
+    const { language, setLanguage } = useAppContext();
+
+    const onClickLanguage = (lng: string) => {
+        setLanguage(lng);
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.wrapper}>
@@ -11,13 +18,27 @@ const SideBar = () => {
                         <span>Le Thanh Binh</span>
                     </div>
                     <div className={styles.title}>
-                        <span>Web Developer</span>
+                        <span>{language === "en" ? "Web Developer" : "Веб-разработчик" }</span>
                     </div>
                     <div className={styles.subTitle}>
-                        <span>21/01/2001</span>
+                        <span>Viet Nam - 21/01/2001</span>
                     </div>
                     <div className={styles.navigationn}>
                         <NavigationMenu />
+                    </div>
+                    <div className={styles.language}>
+                        <div 
+                            className={`${styles.languageItem} ${language === 'en' ? styles.selected : ''}`}
+                            onClick={() => onClickLanguage('en')}
+                        >
+                            <EnglishIcon />
+                        </div>
+                        <div 
+                            className={`${styles.languageItem} ${language === 'ru' ? styles.selected : ''}`}
+                            onClick={() => onClickLanguage('ru')}
+                        >
+                            <RussiaIcon />
+                        </div>
                     </div>
                 </div>
                 <div className={styles.socialLinks}>

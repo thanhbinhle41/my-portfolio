@@ -39,6 +39,26 @@
             margin-top: 3rem;
         }
 
+        .language {
+            display: flex;
+            margin-top: 1.5rem;
+            gap: 1rem;
+
+            .languageItem {
+                cursor: pointer;
+                opacity: 0.5;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            .selected {
+                opacity: 1;
+                transition: opacity 0.3s ease-in-out;
+            }
+        }
+
         .socialLinks {
             padding: 0 1rem;
             display: flex;

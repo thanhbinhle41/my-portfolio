@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './MainContent.module.scss'
-import { ABOUT_DATA } from '../../data/AboutData'
-import { EXPERIENCE_DATA } from '../../data/ExperienceData'
-import { EDUCATION_DATA } from '../../data/EducationData'
-import { PROJECT_DATA } from '../../data/ProjectData'
+import { ABOUT_DATA_EN, ABOUT_DATA_RU } from '../../data/AboutData'
+import { EXPERIENCE_DATA_EN, EXPERIENCE_DATA_RU } from '../../data/ExperienceData'
+import { EDUCATION_DATA_EN, EDUCATION_DATA_RU } from '../../data/EducationData'
+import { PROJECT_DATA_EN, PROJECT_DATA_RU } from '../../data/ProjectData'
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import image1 from '../../data/images/1.jpg';
@@ -16,14 +16,22 @@ import image8 from '../../data/images/8.jpg';
 import image9 from '../../data/images/9.jpg';
 import image10 from '../../data/images/10.jpg';
 import ZoomImages from '../ZoomImages/ZoomImages'
+import { useAppContext } from '../../context/AppContext'
 
 
-const REVERSE_PROJECT_DATA = [...PROJECT_DATA].reverse();
+const REVERSE_PROJECT_DATA_EN = [...PROJECT_DATA_EN].reverse();
+const REVERSE_PROJECT_DATA_RU = [...PROJECT_DATA_RU].reverse();
 
 const MainContent = () => {
+    const { language } = useAppContext();
 
     const [showMoreProjs, setShowMoreProjs] = React.useState(true);
-    const [projects, setProjects] = React.useState(REVERSE_PROJECT_DATA.slice(0, 3));
+    const [projectsData, setProjectsData] = React.useState(REVERSE_PROJECT_DATA_EN.slice(0, 3));
+
+    const [aboutData, setAboutData] = useState(ABOUT_DATA_EN);
+    const [educationData, setEducationData] = useState(EDUCATION_DATA_EN);
+    const [experienceData, setExperienceData] = useState(EXPERIENCE_DATA_EN);
+    
 
     const [listImagesZoom, setListImagesZoom] = useState<string[]>([]);
     const [currentIndexZoom, setCurrentIndexZoom] = useState<number>(0);
@@ -31,18 +39,34 @@ const MainContent = () => {
 
     const images = [image1, image2, image3, image5, image6, image7, image8, image9, image10];
 
+    useEffect(() => {
+        if (language === 'en') {
+            setAboutData(ABOUT_DATA_EN);
+            setEducationData(EDUCATION_DATA_EN);
+            setExperienceData(EXPERIENCE_DATA_EN);
+            setProjectsData(REVERSE_PROJECT_DATA_EN.slice(0, 3));
+        } else {
+            setAboutData(ABOUT_DATA_RU);
+            setEducationData(EDUCATION_DATA_RU);
+            setExperienceData(EXPERIENCE_DATA_RU);
+            setProjectsData(REVERSE_PROJECT_DATA_RU.slice(0, 3));
+        }
+    }, [language]);
+
     const onClickShowMore = () => {
-        const newLength = projects.length + 3;
-        if (newLength >= REVERSE_PROJECT_DATA.length) {
-            setProjects(REVERSE_PROJECT_DATA);
+        const newLength = projectsData.length + 3;
+        const data = language === 'en' ? REVERSE_PROJECT_DATA_EN : REVERSE_PROJECT_DATA_RU;
+        if (newLength >= data.length) {
+            setProjectsData(data);
             setShowMoreProjs(false);
         } else {
-            setProjects(REVERSE_PROJECT_DATA.slice(0, newLength));
+            setProjectsData(data.slice(0, newLength));
         }
     }
 
     const onClickHideLess = () => {
-        setProjects(REVERSE_PROJECT_DATA.slice(0, 3));
+        const data = language === 'en' ? REVERSE_PROJECT_DATA_EN : REVERSE_PROJECT_DATA_RU;
+        setProjectsData(data.slice(0, 3));
         setShowMoreProjs(true);
     }
 
@@ -57,12 +81,12 @@ const MainContent = () => {
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
-                    <div className={styles.titleUpper}>ABOUT</div>
+                    <div className={styles.titleUpper}>{language === "en" ? "ABOUT" : "ОБО МНЕ" }</div>
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
                 </div>
-                {ABOUT_DATA.map((item, index) => (
+                {aboutData.map((item, index) => (
                     <p key={index} className={styles.aboutItem}>{item}</p>
                 ))}
             </div>
@@ -72,12 +96,12 @@ const MainContent = () => {
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
-                    <div className={styles.titleUpper}>EDUCATION</div>
+                    <div className={styles.titleUpper}>{language === "en" ? "EDUCATION" : "ОБРАЗОВАНИЕ" }</div>
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
                 </div>
-                {EDUCATION_DATA.map((item, index) => {
+                {educationData.map((item, index) => {
                     return (
                         <div className={`${styles.educationItem} ${styles.hoverItem}`} key={index}>
                             <div
@@ -115,12 +139,12 @@ const MainContent = () => {
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
-                    <div className={styles.titleUpper}>EXPERIENCE</div>
+                    <div className={styles.titleUpper}>{language === "en" ? "EXPERIENCE" : "ОПЫТ" }</div>
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
                 </div>
-                {EXPERIENCE_DATA.map((item, index) => {
+                {experienceData.map((item, index) => {
                     return (
                         <div className={`${styles.experienceItem} ${styles.hoverItem}`} key={index}>
                             <div className={styles.leftWrapper}>
@@ -163,12 +187,12 @@ const MainContent = () => {
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
-                    <div className={styles.titleUpper}>PROJECTS</div>
+                    <div className={styles.titleUpper}>{language === "en" ? "PROJECTS" : "ПРОЕКТЫ" }</div>
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
                 </div>
-                {projects.map((item, index) => {
+                {projectsData.map((item, index) => {
                     return (
                         <div className={`${styles.projectsItem} ${styles.hoverItem}`} key={index} >
                             <div className={styles.leftWrapper}>
@@ -271,7 +295,7 @@ const MainContent = () => {
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
-                    <div className={styles.titleUpper}>ACTIVITES</div>
+                    <div className={styles.titleUpper}>{language === "en" ? "ACTIVITES" : "ДЕЯТЕЛЬНОСТЬ" }</div>
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
@@ -297,7 +321,6 @@ const MainContent = () => {
                     setCurrentIndexZoom(0);
                     setListImagesZoom([]);
                     setIsZoomed(false);
-                    console.log('siu');
                 }}
                 isZoomed={isZoomed}
             />

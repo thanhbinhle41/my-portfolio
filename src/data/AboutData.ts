@@ -1,5 +1,11 @@
-export const ABOUT_DATA = [
-    "I am a passionate and experienced Web Developer with over 3 years in Software Engineering. My journey in this discipline began in my third yr of college when I commenced working professionally. Since then, I have had the opportunity to collaborate with leading worldwide customers, which include Caterpillar Inc., a Global Fortune #2 in Construction and Farm Machinery.",
+export const ABOUT_DATA_EN = [
+    "I am a passionate and experienced Web Developer with over 3 years in Software Engineering. My journey in this discipline began in my third yr of college when I commenced working professionally. Since then, I have had the opportunity to collaborate with leading worldwide customers, which include Caterpillar Inc., a Global FORTUNE #2 in Construction and Farm Machinery.",
     "Beyond my technical knowledge, I am outgoing and enjoy sports, including soccer and basketball. I have actively participated in college clubs and company organizations, contributing to social and expert communities.",
     "Pursuing a Master's degree in Software Engineering is a crucial step in my profession. I aspire to deepen my know-how, explore cutting-edge technology, and benefit from exposure to Russia's dynamic tech enterprise. I am keen to immerse myself in the academic and cultural environment, mastering from the pinnacle specialists and applying my talents to innovative initiatives.",
+]
+
+export const ABOUT_DATA_RU = [
+    "Я страстный и опытный веб-разработчик с более чем 3-летним опытом работы в области разработки программного обеспечения. Мой путь в этой дисциплине начался на третьем курсе колледжа, когда я начал работать профессионально. С тех пор у меня была возможность сотрудничать с ведущими мировыми клиентами, среди которых Caterpillar Inc., Global FORTUNE #2 в области строительной и сельскохозяйственной техники.",
+    "Помимо моих технических знаний, я общительный и люблю спорт, включая футбол и баскетбол. Я активно участвовал в клубах колледжа и корпоративных организациях, внося вклад в социальные и профессиональные сообщества.",
+    "Получение степени магистра в области программной инженерии является важным шагом в моей карьере. Я стремлюсь углубить свои знания, исследовать передовые технологии и получить опыт в динамичной технологической отрасли России. Я хочу погрузиться в академическую и культурную среду, учиться у ведущих специалистов и применять свои навыки в инновационных проектах.",
 ]
