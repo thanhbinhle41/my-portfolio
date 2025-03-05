@@ -2,6 +2,7 @@ import styles from './SideBar.module.scss'
 import { NavigationMenu } from '../NavigationMenu/NavigationMenu'
 import { EnglishIcon, RussiaIcon } from './LanguageIcon'
 import { useAppContext } from '../../context/AppContext'
+import avatar from '../../data/images/avatar.png'
 
 const SideBar = () => {
     const { language, setLanguage } = useAppContext();
@@ -17,23 +18,27 @@ const SideBar = () => {
                     <div className={styles.ownerName}>
                         <span>Le Thanh Binh</span>
                     </div>
-                    <div className={styles.title}>
-                        <span>{language === "en" ? "Web Developer" : "Веб-разработчик" }</span>
+                    <div className={`${styles.title} ${styles.titleProfile}`}>
+                        <span>{language === "en" ? "Web Developer" : "Веб-разработчик"}</span>
                     </div>
-                    <div className={styles.subTitle}>
-                        <span>Viet Nam - 21/01/2001</span>
+                    <div className={`${styles.subTitle} ${styles.subDescription}`}>
+                        <span>Viet Nam | 21/01/2001</span>
+                    </div>
+
+                    <div className={styles.avatar}>
+                        <img src={avatar} alt="avatar" />
                     </div>
                     <div className={styles.navigationn}>
                         <NavigationMenu />
                     </div>
                     <div className={styles.language}>
-                        <div 
+                        <div
                             className={`${styles.languageItem} ${language === 'en' ? styles.selected : ''}`}
                             onClick={() => onClickLanguage('en')}
                         >
                             <EnglishIcon />
                         </div>
-                        <div 
+                        <div
                             className={`${styles.languageItem} ${language === 'ru' ? styles.selected : ''}`}
                             onClick={() => onClickLanguage('ru')}
                         >
@@ -56,6 +61,9 @@ const SideBar = () => {
                     </a>
                 </div>
 
+            </div>
+            <div className={styles.avatarTablet}>
+                <img src={avatar} alt="avatar" />
             </div>
         </div>
     )

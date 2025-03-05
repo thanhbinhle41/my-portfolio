@@ -3,7 +3,7 @@ import styles from './NavigationMenu.module.scss'
 import useActiveSection from '../../app/useActiveSection';
 import { useAppContext } from '../../context/AppContext';
 
-const NAV_LIS_EN: { label: string, name: string}[] = [
+const NAV_LIS_EN: { label: string, name: string }[] = [
     { label: 'ABOUT', name: "about" },
     { label: 'EDUCATION', name: "education" },
     { label: 'EXPERIENCE', name: "experience" },
@@ -11,7 +11,7 @@ const NAV_LIS_EN: { label: string, name: string}[] = [
     { label: 'ACTIVITIES', name: "activities" },
 ];
 
-const NAV_LIS_RU: { label: string, name: string}[] = [
+const NAV_LIS_RU: { label: string, name: string }[] = [
     { label: 'ОБО МНЕ', name: "about" },
     { label: 'ОБРАЗОВАНИЕ', name: "education" },
     { label: 'ОПЫТ', name: "experience" },
@@ -31,8 +31,13 @@ export const NavigationMenu = () => {
     const onClick = (e: React.MouseEvent<HTMLDivElement>, name: string) => {
         setSelected(name);
         const element = document.getElementById(name.toLowerCase());
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+        const container = document.getElementById("scrollable-container");
+
+        if (element && container) {
+            const yOffset = -100; // Adjust this value to add padding
+            const y = element.offsetTop + yOffset;
+        
+            container.scrollTo({ top: y, behavior: "smooth" });
         }
     }
 
