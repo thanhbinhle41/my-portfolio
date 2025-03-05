@@ -46,7 +46,9 @@ export const NavigationMenu = () => {
     }, [language]);
 
     useEffect(() => {
-        setSelected(activeSection.toLowerCase());
+        if (activeSection) {
+            setSelected(activeSection.toLowerCase());
+        }
     }, [activeSection]);
 
     return (
