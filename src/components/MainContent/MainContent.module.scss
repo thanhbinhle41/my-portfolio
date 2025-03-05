@@ -6,6 +6,7 @@
     flex-direction: column;
     position: relative;
     padding: 6rem 0;
+    gap: 6rem;
 
     // REUSEABLE CSS
     .hoverItem {
@@ -100,6 +101,27 @@
         /* Prevent dragging in Safari */
     }
 
+    .headerTitle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        .headerLine {
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+
+            span {
+                background-color: $paragraph-color-2;
+                height: 1px;
+                width: 100%;
+            }
+
+        }
+    }
 
     // END REUSEABLE CSS
 
@@ -108,7 +130,6 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        margin-bottom: 6rem;
 
         .aboutItem {
             color: $paragraph-color;
@@ -124,7 +145,6 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        margin-bottom: 6rem;
 
         .educationItem {
             display: flex;
@@ -150,7 +170,6 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        margin-bottom: 6rem;
 
         .experienceItem {
             display: flex;
@@ -187,7 +206,6 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        margin-bottom: 6rem;
 
         .projectsItem {
             display: flex;
@@ -208,7 +226,6 @@
                 }
 
                 .media {
-                    height: 200px;
                     width: 85%;
                     max-width: 85%;
 
@@ -236,6 +253,7 @@
                         border-radius: 0.5rem;
                         width: 100%;
                         object-fit: cover;
+                        aspect-ratio: 16 / 9;
 
                         :global {
                             .slide div {
@@ -288,6 +306,7 @@
                 .techWrapper {
                     display: flex;
                     gap: 0.5rem;
+                    flex-wrap: wrap;
 
                     .techItem {
                         display: flex;
@@ -327,6 +346,7 @@
             letter-spacing: .025em;
             font-weight: 500;
             font-size: 1rem;
+            padding-bottom: 1rem;
         }
 
 
@@ -337,4 +357,61 @@
     }
 
     // END ACTIVITIES
+}
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        gap: 4rem;
+
+        .headerTitle {
+            position: sticky;
+            top: 0;
+            padding: 1rem 0;
+            background-color: rgb(15, 23, 42);
+            margin-left: -2rem;
+            margin-right: -2rem;
+            z-index: 999;
+        }
+    }
+}
+
+@media screen and (max-width: 577px) {
+    .container {
+        .experience {
+            .experienceItem {
+
+                flex-direction: column;
+
+                .leftWrapper {
+                    width: 100%;
+                }
+
+                .rightWrapper {
+                    width: 100%;
+                }
+            }
+        }
+
+        .projects {
+            .projectsItem {
+                flex-direction: column;
+
+                .leftWrapper {
+                    width: 100%;
+
+                    .media {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                }
+
+                .rightWrapper {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    
 }

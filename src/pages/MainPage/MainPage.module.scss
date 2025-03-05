@@ -69,10 +69,36 @@
                         width: 70%;
                     }
                 }
-                
+
             }
         }
     }
+}
+@media only screen and (max-width: 1024px) {
+    .contentWrapper {
+        .content {
+            flex-direction: column;
+            .sideBar {
+                position:  relative !important;
+                width: 100% !important;
+            }
+            .mainContent {
+                width: 100% !important;
+            }
+        }
+    }
+}
 
+@media screen and (max-width: 768px) {
+    .contentWrapper {
+        padding: 0 2rem !important;
+    }
+    
+}
 
+@media screen and (max-width: 577px) {
+    .contentWrapper {
+        padding: 0 1rem !important;
+    }
+    
 }

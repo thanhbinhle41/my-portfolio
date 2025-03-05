@@ -93,7 +93,7 @@ export const PROJECT_DATA: IProjectData[] = [
         startDate: "Aug 2023",
         endDate: "Dec 2023",
         position: "Full-stack Mobile Developer",
-        technologies: ["React Native", "NestJS", "Postgresql", "Python"],
+        technologies: ["React Native", "NestJS", "PostgreSQL", "Python"],
         description: [
             "Developed the mobile application UI using React Native, ensuring a seamless and user-friendly experience.",
             "Designed and developed RESTful APIs using NestJS for efficient and scalable backend services.",
@@ -109,7 +109,7 @@ export const PROJECT_DATA: IProjectData[] = [
         startDate: "Apr 2023",
         endDate: "Nov 2024",
         position: "Full-stack Developer",
-        technologies: ["ReactJS", "TypeScript", "Flask", "Fast API"],
+        technologies: ["ReactJS", "TypeScript", "Flask", "Fast API", "MySQL"],
         description: [
             "Developed project modules as independent functions and components, then integrated them into the main application for seamless functionality.",
             "Analyzed requirements and processed data streams to ensure efficient data handling and system performance.",

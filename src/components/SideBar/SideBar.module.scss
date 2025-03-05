@@ -51,6 +51,7 @@
             a {
                 text-decoration: none;
                 color: inherit;
+
                 &:hover,
                 &:focus,
                 &:active {
@@ -65,8 +66,23 @@
                 }
             }
         }
-
     }
+}
 
+/* Laptop styles */
+@media only screen and (max-width: 1024px) {
+    .container {
+        padding-top: 4rem;
+        padding-bottom: 0rem;
 
+        .wrapper {
+            .navigationn {
+                display: none;
+            }
+
+            .socialLinks {
+                padding: 1rem 0 0 0;
+            }
+        }
+    }
 }

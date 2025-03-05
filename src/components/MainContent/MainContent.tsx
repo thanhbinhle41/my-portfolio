@@ -53,12 +53,30 @@ const MainContent = () => {
     return (
         <div className={styles.container}>
             <div className={styles.about} id="about">
+                <div className={styles.headerTitle}>
+                    <div className={styles.headerLine}>
+                        <span></span>
+                    </div>
+                    <div className={styles.titleUpper}>ABOUT</div>
+                    <div className={styles.headerLine}>
+                        <span></span>
+                    </div>
+                </div>
                 {ABOUT_DATA.map((item, index) => (
                     <p key={index} className={styles.aboutItem}>{item}</p>
                 ))}
             </div>
 
             <div className={styles.education} id="education">
+                <div className={styles.headerTitle}>
+                    <div className={styles.headerLine}>
+                        <span></span>
+                    </div>
+                    <div className={styles.titleUpper}>EDUCATION</div>
+                    <div className={styles.headerLine}>
+                        <span></span>
+                    </div>
+                </div>
                 {EDUCATION_DATA.map((item, index) => {
                     return (
                         <div className={`${styles.educationItem} ${styles.hoverItem}`} key={index}>
@@ -93,6 +111,15 @@ const MainContent = () => {
             </div>
 
             <div className={styles.experience} id="experience">
+                <div className={styles.headerTitle}>
+                    <div className={styles.headerLine}>
+                        <span></span>
+                    </div>
+                    <div className={styles.titleUpper}>EXPERIENCE</div>
+                    <div className={styles.headerLine}>
+                        <span></span>
+                    </div>
+                </div>
                 {EXPERIENCE_DATA.map((item, index) => {
                     return (
                         <div className={`${styles.experienceItem} ${styles.hoverItem}`} key={index}>
@@ -132,6 +159,15 @@ const MainContent = () => {
             </div>
 
             <div className={styles.projects} id="projects">
+                <div className={styles.headerTitle}>
+                    <div className={styles.headerLine}>
+                        <span></span>
+                    </div>
+                    <div className={styles.titleUpper}>PROJECTS</div>
+                    <div className={styles.headerLine}>
+                        <span></span>
+                    </div>
+                </div>
                 {projects.map((item, index) => {
                     return (
                         <div className={`${styles.projectsItem} ${styles.hoverItem}`} key={index} >
@@ -181,8 +217,8 @@ const MainContent = () => {
                                                             setIsZoomed(true);
                                                         }}
                                                     >
-                                                        <img 
-                                                            src={img} alt="projects_img" 
+                                                        <img
+                                                            src={img} alt="projects_img"
                                                             loading='lazy'
                                                             style={{ cursor: "pointer", maxHeight: "400px", objectFit: "cover" }} />
                                                     </div>
@@ -231,6 +267,15 @@ const MainContent = () => {
             </div>
 
             <div className={styles.activities} id="activities">
+                <div className={styles.headerTitle}>
+                    <div className={styles.headerLine}>
+                        <span></span>
+                    </div>
+                    <div className={styles.titleUpper}>ACTIVITES</div>
+                    <div className={styles.headerLine}>
+                        <span></span>
+                    </div>
+                </div>
                 <div className={styles.activitiesDescription}>
                     <span>Also I am an outgoing individual who enjoys sports and actively organizes events in both academic and corporate settings. These experiences have strengthened my teamwork, leadership, and organizational skills.</span>
                 </div>
