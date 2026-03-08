@@ -46,16 +46,21 @@
 
             .languageItem {
                 cursor: pointer;
+                color: $text-color;
                 opacity: 0.5;
+                transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
 
                 &:hover {
                     opacity: 1;
+                    color: $highlight-color;
                 }
             }
 
             .selected {
                 opacity: 1;
-                transition: opacity 0.3s ease-in-out;
+                color: $text-color;
+                text-decoration: underline;
+                text-underline-offset: 0.25em;
             }
         }
 

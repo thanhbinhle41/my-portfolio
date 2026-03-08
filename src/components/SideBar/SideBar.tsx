@@ -1,6 +1,5 @@
 import styles from './SideBar.module.scss'
 import { NavigationMenu } from '../NavigationMenu/NavigationMenu'
-import { EnglishIcon, RussiaIcon } from './LanguageIcon'
 import { useAppContext } from '../../context/AppContext'
 
 const SideBar = () => {
@@ -31,13 +30,13 @@ const SideBar = () => {
                             className={`${styles.languageItem} ${language === 'en' ? styles.selected : ''}`}
                             onClick={() => onClickLanguage('en')}
                         >
-                            <EnglishIcon />
+                            Eng
                         </div>
                         <div 
                             className={`${styles.languageItem} ${language === 'ru' ? styles.selected : ''}`}
                             onClick={() => onClickLanguage('ru')}
                         >
-                            <RussiaIcon />
+                            Ru
                         </div>
                     </div>
                 </div>
