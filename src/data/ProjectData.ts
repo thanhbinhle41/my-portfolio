@@ -126,7 +126,7 @@ export const PROJECT_DATA_EN: IProjectData[] = [
         startDate: "Oct 2024",
         endDate: "Present",
         position: "Full-stack Developer",
-        technologies: ["ReactJS", "Python", "Gen AI"],
+        technologies: ["ReactJS", "Python", "Gen AI", "AI Agent"],
         description: [
             "Developed and maintained the front-end application using ReactJS, ensuring a responsive and user-friendly interface.",
             "Optimize system performance and scalability to support continuous workflow automation.",
@@ -136,7 +136,7 @@ export const PROJECT_DATA_EN: IProjectData[] = [
         link: "https://maxflow.ai/",
     }
 
-]  
+]
 
 
 export const PROJECT_DATA_RU: IProjectData[] = [
@@ -241,7 +241,7 @@ export const PROJECT_DATA_RU: IProjectData[] = [
         startDate: "Окт 2024",
         endDate: "Настоящее время",
         position: "Full-stack разработчик",
-        technologies: ["ReactJS", "Python", "Gen AI"],
+        technologies: ["ReactJS", "Python", "Gen AI", "AI Agent"],
         description: [
             "Разработал и поддерживал фронтенд приложение с использованием ReactJS, обеспечив отзывчивый и удобный интерфейс.",
             "Оптимизировал производительность и масштабируемость системы для поддержки непрерывной автоматизации рабочих процессов.",
