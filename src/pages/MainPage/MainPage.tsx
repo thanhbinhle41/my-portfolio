@@ -37,7 +37,7 @@ const MainPage = () => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.scrollContainer} ref={scrollContainerRef}>
+            <div className={styles.scrollContainer} ref={scrollContainerRef} id={"scrollable-container"}>
                 <div className={styles.wrapper} ref={wrapperRef}>
                     <div className={styles.contentWrapper}>
                         <div className={styles.content}>

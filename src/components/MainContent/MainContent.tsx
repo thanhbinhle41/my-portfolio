@@ -76,8 +76,8 @@ const MainContent = () => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.about} id="about">
-                <div className={styles.headerTitle}>
+            <div className={styles.about}>
+                <div className={styles.headerTitle} id="about">
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
@@ -91,8 +91,8 @@ const MainContent = () => {
                 ))}
             </div>
 
-            <div className={styles.education} id="education">
-                <div className={styles.headerTitle}>
+            <div className={styles.education}>
+                <div className={styles.headerTitle} id="education">
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
@@ -134,8 +134,8 @@ const MainContent = () => {
                 })}
             </div>
 
-            <div className={styles.experience} id="experience">
-                <div className={styles.headerTitle}>
+            <div className={styles.experience} >
+                <div className={styles.headerTitle} id="experience">
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
@@ -182,8 +182,8 @@ const MainContent = () => {
                 })}
             </div>
 
-            <div className={styles.projects} id="projects">
-                <div className={styles.headerTitle}>
+            <div className={styles.projects} >
+                <div className={styles.headerTitle} id="projects">
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
@@ -290,8 +290,8 @@ const MainContent = () => {
                 </div>
             </div>
 
-            <div className={styles.activities} id="activities">
-                <div className={styles.headerTitle}>
+            <div className={styles.activities} >
+                <div className={styles.headerTitle} id="activities">
                     <div className={styles.headerLine}>
                         <span></span>
                     </div>
